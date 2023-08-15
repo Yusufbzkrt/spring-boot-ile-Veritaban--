@@ -1,0 +1,10 @@
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (1,'Galatasaray','türkiye Ligi',1,'GS');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (2,'Shaktar','Romanya Ligi',2,'SH');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (3,'Real Madrid','İspanya Ligi',3,'RM');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (4,'Trabzonspor','türkiye Ligi',4,'TS');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (5,'Barcelona','İspanya Ligi',5,'BRC');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (6,'Dortmunt','Almanya Ligi',6,'DRT');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (7,'liverpool','İngiltere Ligi',7,'LP');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (8,'Tottenham','İngiltere Ligi',8,'TT');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (9,'Münich','Almanya Ligi',9,'MNC');
+insert into TEAM(ID,TEAMNAME,LIG,STADIUMID,TEAMCODE) values (10,'Atletico Madrid','İspanya Ligi',10,'ATL');

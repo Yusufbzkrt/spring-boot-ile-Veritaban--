@@ -1,0 +1,10 @@
+insert into STADIUM(ID,STADIUM,HEIGHT)values (1,'Beytepe Stadyumu',1000);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (2,'Şükrü Saraçoğlu',2000);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (3,'santiago bernabue',3000);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (4,'Trazbzon Stadyumu',1500);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (5,'Camp Nou',2500);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (6,'Dortmunt Stadyumu',1500);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (7,'Liverpool Stadyumu',3500);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (8,'Tottenham Stadyumu',1500);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (9,'Münih Stadyumu',2000);
+insert into STADIUM(ID,STADIUM,HEIGHT)values (10,'Atletico Stadyumu',3000);

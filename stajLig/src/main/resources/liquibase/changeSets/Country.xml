@@ -1,0 +1,45 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="isahin" id="SEQ_COUNTRY"
+               failOnError="false">
+        <createSequence maxValue="9223372036854775800"
+                        sequenceName="SEQ_COUNTRY" startValue="1"/>
+    </changeSet>
+    <changeSet author="isahin" id="COUNTRY"
+               failOnError="false">
+    <createTable tableName="COUNTRY">
+        <column name="ID" type="bigint">
+        <constraints nullable="false"
+                     primaryKey="true"
+                     primaryKeyName="PK_COUNTRY"/>
+    </column>
+        <column name="NAME" type="varchar2(30)">
+        </column>
+        <column name="CONTINENT" type="varchar2(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created_by" type="BIGINT"></column>
+        <column name="created_date" type="DATE"></column>
+        <column name="last_modified_by" type="BIGINT"></column>
+        <column name="last_modified_date" type="DATE"></column>
+        <column name="createAt" type="DATE"></column>
+        <column name="createby" type="varchar2(30)"></column>
+        <column name="updateby" type="varchar2(30)"></column>
+        <column name="updatedat" type="DATE"></column>
+        <column name="createdate" type="DATE"></column>
+        <column name="createddatee" type="varchar2(30)"></column>
+        <column name="createat" type="DATE"></column>
+
+    </createTable>
+
+    </changeSet>
+    <changeSet id="country_init_data_sql" author="yusuf" dbms="postgresql">
+        <sqlFile path="Country.sql" relativeToChangelogFile="true" encoding="UTF-8" splitStatements="true"
+                 stripComments="true" dbms="postgresql" endDelimiter=";"/>
+        </changeSet>
+
+</databaseChangeLog>

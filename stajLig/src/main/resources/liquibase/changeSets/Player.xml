@@ -1,0 +1,75 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="isahin" id="SEQ_PLAYER"
+               failOnError="false">
+        <createSequence maxValue="9223372036854775800"
+                        sequenceName="SEQ_PLAYER" startValue="1"/>
+    </changeSet>
+    <changeSet author="isahin" id="PLAYER"
+               failOnError="true">
+        <createTable tableName="PLAYER">
+            <column name="ID" type="bigint">
+            <constraints nullable="false"
+                         primaryKey="true"
+                         primaryKeyName="PK_PLAYER"/>
+            </column>
+            <column name="FIRSTNAME" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SURNAME" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNTRYID" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TEAMID" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRICE" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DOGUMTAR" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MEVKI" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AYAK" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GUC" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT"></column>
+            <column name="created_date" type="DATE"></column>
+            <column name="last_modified_by" type="BIGINT"></column>
+            <column name="last_modified_date" type="DATE"></column>
+            <column name="createAt" type="DATE"></column>
+            <column name="createby" type="varchar2(30)"></column>
+            <column name="updateby" type="varchar2(30)"></column>
+            <column name="updatedat" type="DATE"></column>
+            <column name="createdate" type="DATE"></column>
+            <column name="createddatee" type="varchar2(30)"></column>
+            <column name="createat" type="DATE"></column>
+        </createTable>
+         <addForeignKeyConstraint baseColumnNames="COUNTRYID"
+                                  baseTableName="PLAYER"
+                                  constraintName="FK_PLAYER_TOCountry"
+                                  initiallyDeferred="true" referencedColumnNames="ID"
+                                  referencedTableName="COUNTRY"/>
+
+        <addForeignKeyConstraint baseColumnNames="TEAMID"
+                                 baseTableName="PLAYER"
+                                 constraintName="FK_PLAYER_TOTeam" deferrable="true"
+                                 initiallyDeferred="true" referencedColumnNames="ID"
+                                 referencedTableName="TEAM"/>
+    </changeSet>
+    <changeSet id="player_init_data_sql" author="yusuf" dbms="postgresql">
+        <sqlFile path="Player.sql" relativeToChangelogFile="true" encoding="UTF-8" splitStatements="true"
+                 stripComments="true" dbms="postgresql" endDelimiter=";"/>
+    </changeSet>
+</databaseChangeLog>

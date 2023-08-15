@@ -1,0 +1,59 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="isahin" id="SEQ_TEAM"
+               failOnError="false">
+        <createSequence maxValue="9223372036854775800"
+                        sequenceName="SEQ_TEAM" startValue="1"/>
+    </changeSet>
+    <changeSet author="isahin" id="TEAM"
+               failOnError="false">
+        <createTable tableName="TEAM">
+            <column name="ID" type="bigint">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="PK_TEAM"/>
+            </column>
+
+            <column name="TEAMNAME" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="LIG" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="STADIUMID" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="TEAMCODE" type="varchar2(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT"></column>
+            <column name="created_date" type="DATE"></column>
+            <column name="last_modified_by" type="BIGINT"></column>
+            <column name="last_modified_date" type="DATE"></column>
+            <column name="createAt" type="DATE"></column>
+            <column name="createby" type="varchar2(30)"></column>
+            <column name="updateby" type="varchar2(30)"></column>
+            <column name="updatedat" type="DATE"></column>
+            <column name="createdate" type="DATE"></column>
+            <column name="createddatee" type="varchar2(30)"></column>
+            <column name="createat" type="DATE"></column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="STADIUMID"
+                                 baseTableName="TEAM"
+                                 constraintName="FK_TEAM_TOSTADIUM" deferrable="true"
+                                 initiallyDeferred="true" referencedColumnNames="ID"
+                                 referencedTableName="STADIUM"/>
+
+    </changeSet>
+    <changeSet id="team_init_data_sql" author="yusuf" dbms="postgresql">
+        <sqlFile path="Team.sql" relativeToChangelogFile="true" encoding="UTF-8" splitStatements="true"
+                 stripComments="true" dbms="postgresql" endDelimiter=";"/>
+    </changeSet>
+</databaseChangeLog>
